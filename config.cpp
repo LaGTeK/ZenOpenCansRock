@@ -38,7 +38,7 @@ class CfgMods
 				value = "";
 				files[] = { "ZenOpenCansRock/scripts/4_world" };
 			};
-		}
+		};
 	};
 };
 
@@ -53,4 +53,4 @@ class CfgVehicles
 	{
 		openItemSpillRange[] = { 70,90 };
 	};
-}
+};
