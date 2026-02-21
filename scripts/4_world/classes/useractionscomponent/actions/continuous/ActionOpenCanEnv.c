@@ -50,28 +50,28 @@ class ActionOpenCanEnv : ActionContinuousBase
 	{
 		super.OnStartAnimationLoop( action_data );
 
-		if ( !GetGame().IsMultiplayer() || GetGame().IsServer() )
+		if ( !g_Game.IsMultiplayer() || g_Game.IsServer() )
 		{
 			Param2<bool, string> play = new Param2<bool, string>( true, "minePickAxe_SoundSet" );
-			GetGame().RPCSingleParam( action_data.m_MainItem, ERPCs.RPC_SOUND_LOCK_ATTACH, play, true );
+			g_Game.RPCSingleParam( action_data.m_MainItem, ERPCs.RPC_SOUND_LOCK_ATTACH, play, true );
 		}
 	}
 	
 	override void OnEnd( ActionData action_data )
 	{
-		if ( !GetGame().IsMultiplayer() || GetGame().IsServer() )
+		if ( !g_Game.IsMultiplayer() || g_Game.IsServer() )
 		{
 			Param2<bool, string> play = new Param2<bool, string>( false, "minePickAxe_SoundSet" );
-			GetGame().RPCSingleParam( action_data.m_MainItem, ERPCs.RPC_SOUND_LOCK_ATTACH, play, true );
+			g_Game.RPCSingleParam( action_data.m_MainItem, ERPCs.RPC_SOUND_LOCK_ATTACH, play, true );
 		}
 	}
 	
 	override void OnEndAnimationLoop( ActionData action_data )
 	{
-		if ( !GetGame().IsMultiplayer() || GetGame().IsServer() )
+		if ( !g_Game.IsMultiplayer() || g_Game.IsServer() )
 		{
 			Param2<bool, string> play = new Param2<bool, string>( false, "minePickAxe_SoundSet" );
-			GetGame().RPCSingleParam( action_data.m_MainItem, ERPCs.RPC_SOUND_LOCK_ATTACH, play, true );
+			g_Game.RPCSingleParam( action_data.m_MainItem, ERPCs.RPC_SOUND_LOCK_ATTACH, play, true );
 		}
 	}
 };
